@@ -11,5 +11,4 @@ while contador < n:
      num1 = num2
      num2 = num3
      contador +=1
-     
      print(num1)
