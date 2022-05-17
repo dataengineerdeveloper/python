@@ -11,3 +11,4 @@ while senha1 != senha2:
     senha2 = input('coloque a mesma senha: ')
     print('senha valida!')
     
+    
