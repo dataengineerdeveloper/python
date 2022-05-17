@@ -6,3 +6,4 @@ while lista <= 10:
     print(lista)
     lista = lista+1 
     
+    
