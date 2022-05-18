@@ -24,4 +24,4 @@ while x:
         x=False
         break
 if x:
-    print("senha invalidas")
+    print("senha invalida")
