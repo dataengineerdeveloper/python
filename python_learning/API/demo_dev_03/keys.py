@@ -1,0 +1,1 @@
+nomics_api_key = '7a51aa8ed31a3093af39ae0a45a92c65e3d0d931'
