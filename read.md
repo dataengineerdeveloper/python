@@ -9,9 +9,13 @@ RESUMO DE COMANDOS MAIS USADOS
 5. git commit meuarquivo.txt -m "minha mensagem de commit"
 6. git push -u origin master >>> primeiro pusha que faca tem de de ter o branch e repo
 7. git push  >>> push que preciso de fazer de seguida nao preciso de colocar o branch nem repo
-8. git clone git@github.com:leocomelli/curso-git.git
-9. git merge bug-123 >>> imginemos que vamos trabahar num branch ao lado do master depois tem de ser feito merge
-10. git branch -d bug-123 >>> no fim quando tiver sido feit o merge posso fazer o delete do branch
+8. git checkout master
+9. git merge bug-123
+10. git push
+
+11. git clone git@github.com:leocomelli/curso-git.git
+12. git merge bug-123 >>> imginemos que vamos trabahar num branch ao lado do master depois tem de ser feito merge
+13. git branch -d bug-123 >>> no fim quando tiver sido feit o merge posso fazer o delete do branch
 
 
 
