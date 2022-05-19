@@ -14,3 +14,4 @@ else:
     print('media = ' , soma/(contador-1))
     print('soma dos numeros ', soma)
     
+    

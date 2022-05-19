@@ -7,3 +7,4 @@ while lista <= 10:
     lista = lista+1
     
     
+    

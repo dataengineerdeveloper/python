@@ -6,3 +6,4 @@ while nr_digitado >=0:
         maior=nr_digitado
         nr_digitado= int(input('inserir um novo numero positivo: '))
 print('o valor', maior, 'é o maior valor digitados')
+

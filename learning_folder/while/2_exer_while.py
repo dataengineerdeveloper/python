@@ -12,3 +12,4 @@ while contador < n:
      num2 = num3
      contador +=1
      print(num1)
+     

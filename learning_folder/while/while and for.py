@@ -10,7 +10,7 @@ a=1
 for a in range(5):
     print(a)
 
-#a forma como está apresentados o while e o for vai dar o mesmo output
+#a forma como está apresentados o while e o for vai dar o mesmo output.
 #neste caso posso ver que a range é a até 5,  mas quero que os valores sejam apresentados em pares,  dai ter o 0,2,5,  o range fosse até 6 ou 7 o proximo valor que eu ia ver seria o 6
 for a in range (0,5,2):
     print(a)

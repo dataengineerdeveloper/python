@@ -10,3 +10,4 @@ while valor !=0:
 if total > 1000:
     total-=total*0.1
 print('o total a pagar é: ', total)
+
