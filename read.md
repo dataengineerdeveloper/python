@@ -3,6 +3,13 @@
 RESUMO DE COMANDOS MAIS USADOS
 
 1. git branch bug-123 >>> criar um novo branch,  para nao estar a trabalhar no master
+1.1. git branch -c branchEspecifica MinhaNovaBrach
+git branch MinhaNovaBrach
+git checkout MinhaNovaBrach
+git commit -m "Olha que commit lindo <3"
+git push -u origin MinhaNovaBrach
+>>> soposndo que criar um branch,  mas nao associamos o brnach master >>> fazemos um pull da versao ais atual >>> git pull origin master
+
 2. git checkout master >>> NO CASO PRECISARMOS DE MUDAR OARA O BRANCH DE MASTER
 3. git pull >>> no caso de estarmos num branch,  mas precismos de receber a a ultimas alteracoes que forma feitas
 4. git add .  >>> adicionar alteracoes ao staging,  antes de ser feito o commit
