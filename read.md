@@ -1,3 +1,26 @@
+Goal of this journey
+
+git
+cicd
+devops
+python
+pandas
+pyspark
+sql (postgres)
+nosql(mongodb,  redis, firebase)
+airflow / luigi
+docker
+terraform
+
+
+
+
+
+
+
+
+
+
 >>> GIT <<<
 
 RESUMO DE COMANDOS MAIS USADOS
