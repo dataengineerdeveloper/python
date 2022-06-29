@@ -1,6 +1,7 @@
 from fastapi import FastAPI
-#from fastapi.middleware.cors import CORSMiddleware
-from redis_om import get_redis_connection,  HashModel
+from pydantic import BaseModel
+from typing import Optional
+
 
 
 #uvicorn main:app --reload  // cmd to get values from api. in order to make this work you have to run from the source folder
@@ -8,67 +9,31 @@ from redis_om import get_redis_connection,  HashModel
 app=FastAPI()
 
 
-'''
-Basicamnete uvicorn está a correr an port 8000,  mas pode existir diferentes port e de forma prevenir isso temos de criar um middleware,  e temos de colocar as port permitidas.
+class Item(BaseModel):
+    id:int
+    name:str
+    description:str
+    price:float
+    on_offer:bool
 
-app.add_middleware(
-    CORSMiddleware,
-    #this port are our frontend so we need to allow frontend to call apis
-    allow_origins=['http://localhost:3000'],
-    allow_methods=['*'],
-    allow_headers=['*']
+#Basicamnete uvicorn está a correr an port 8000,  mas pode existir diferentes port e de forma prevenir isso temos de criar um middleware,  e temos de colocar as port permitidas.
+
+@app.get('/')
+def index():
+    return {"message":"hello wworld"}
+
+@app.get('/greet/{name}')
+def greet_name(name:str):
+    return {"greeting":f"hello {name}"}
+
+@app.get('/greet')
+def greet_optional_name(name:Optional[str]="user"):
+    return {"message":f"hello {name}"}
     
-)'''
-
-redis = get_redis_connection(
-    host="redis-10771.c293.eu-central-1-1.ec2.cloud.redislabs.com",
-    port="10771",
-    password="Ekh7F2c8vmHUbTi6q5cOJdoFFBuxGMgd",
-    decode_responses=True
-)
-
-
-'''
-agora tem de ser convertido um modulo para uma tabela no redis
-
-'''
-
-
-class Product(HashModel):
-    name: str
-    price: float
-    quantity: int
-
-    class Meta:
-        database = redis
-
-
-@app.get('/products')
-def all():
-    return [format(pk) for pk in Product.all_pks()]
-
-
-def format(pk: str):
-    product = Product.get(pk)
-
-    return {
-        'id': product.pk,
-        'name': product.name,
-        'price': product.price,
-        'quantity': product.quantity
-    }
-
-
-@app.post('/products')
-def create(product: Product):
-    return product.save()
-
-
-@app.get('/products/{pk}')
-def get(pk: str):
-    return Product.get(pk)
-
-
-@app.delete('/products/{pk}')
-def delete(pk: str):
-    return Product.delete(pk)
+@app.put('/item/{item_id}')
+def update_item(item_id:int, item:Item):
+    return {'namee':item.name,
+            'description':item.description,
+            'price':item.price,
+            'on_offer':item.on_offer}
+    
